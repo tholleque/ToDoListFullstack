@@ -1,3 +1,5 @@
+using ToDoListBackend.Models;
+
 namespace ToDoListBackend
 {
     public class Program
@@ -12,6 +14,7 @@ namespace ToDoListBackend
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<ToDoDbContext>();
 
             var app = builder.Build();
 
