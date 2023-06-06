@@ -4,12 +4,14 @@
 //
 //   const employee = Convert.toEmployee(json);
 
+import { ToDo } from "./to-do";
+
 export interface Employee {
     id:    number;
     name:  string;
     hours: number;
     title: string;
-    toDos: any[];
+    toDos: ToDo[];
 }
 
 // Converts JSON strings to/from your types

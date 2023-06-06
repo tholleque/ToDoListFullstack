@@ -1,0 +1,11 @@
+<div *ngFor="let e of employees; index as i">
+    <p>Name: {{e.name}}</p>
+    <p>Hours: {{e.hours}}</p>
+    <p>Title: {{e.title}}</p>
+    <p>Assigned Tasks:</p>
+    <ul>
+        <li *ngFor="let t of e.toDos">{{t.name}}</li>
+    </ul>
+    <button (click)="deleteEmployee(e.id, i)">Delete {{e.name}}</button>
+    <br>
+</div>

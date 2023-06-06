@@ -15,6 +15,18 @@ export class ToDoListService {
     return this.http.get<ToDo[]>(this.url);
   }
 
+  getToDosByEmployee(employeeId:number, todos:ToDo[] ):any{
+    
+    let output:ToDo[] = []; 
+    for(let i = 0; i < todos.length; i++){
+      if(todos[i].assignedTo === employeeId){
+        output.push(todos[i]);
+      }
+    }
+​
+    return output;
+  }
+
   getToDo(id:number):Observable<ToDo>{
     return this.http.get<ToDo>(this.url + id);
   }
@@ -25,5 +37,5 @@ export class ToDoListService {
 
   deleteToDo(id:number):Observable<void>{
     return this.http.delete<void>(this.url + id);
-  }
+  } 
 }
